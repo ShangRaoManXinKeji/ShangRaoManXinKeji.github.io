@@ -121,7 +121,7 @@ footer {
 /* Language Switcher */
 .language-switcher {
   position: absolute;
-  top: 1rem;
+  top: 1.5rem;
   right: 1rem;
   display: flex;
   gap: 0.5rem;
