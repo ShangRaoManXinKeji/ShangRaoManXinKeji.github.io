@@ -55,3 +55,23 @@ function toggleNav() {
   hamburger.classList.toggle('active');
   navLinks.classList.toggle('nav-active');
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+     const navLinks = document.querySelectorAll('.nav-links a');
+     navLinks.forEach(link => {
+       link.addEventListener('click', function(e) {
+         // Close the mobile menu if it's open
+         document.querySelector('.nav-links').classList.remove('nav-active');
+         document.querySelector('.hamburger').classList.remove('active');
+
+         // Don't prevent default for actual navigation links
+         if(this.getAttribute('href').startsWith('#')) {
+           e.preventDefault();
+           const targetId = this.getAttribute('href');
+           document.querySelector(targetId).scrollIntoView({
+             behavior: 'smooth'
+           });
+         }
+       });
+     });
+   });
