@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | 服务 - Man Xing Enterprise | 上饶满星科技</title>
+  <link rel="icon" href="./assets/icon.png" type="image/x-icon">
+  <meta name="author" content="钟智强">
+  <meta name="copyright" content="上饶满星科技">
+  <meta name="description" content="上饶满星科技提供多样化的IT服务，包括移动应用开发、网站开发、系统开发、人工智能与机器学习、网络安全解决方案、云服务、区块链开发和物联网解决方案。">
+  <meta name="keywords" content="上饶满星科技, IT服务, 移动应用开发, 网站开发, 系统开发, 人工智能, 机器学习, 网络安全, 云服务, 区块链, 物联网">
+  <link rel="stylesheet" href="../style/main.css">
+  <link rel="stylesheet" href="../style/serivces.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../index.html">
+            <img src="../assets/banner.png" alt="Man Xing Enterprise Logo" class="logo-img">
+          </a>
+        </div>
+        <div class="hamburger" onclick="toggleNav()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html" class="en">Home</a><a href="index.html" class="zh">主页</a></li>
+          <li><a href="services.html" class="en">Services</a><a href="services.html" class="zh">服务</a></li>
+          <li><a href="#about" class="en">About</a><a href="#about" class="zh">关于我们</a></li>
+          <li><a href="#contact" class="en">Contact</a><a href="#contact" class="zh">联系我们</a></li>
+          <li class="language-switcher">
+            <button onclick="setLanguage('en')" id="en-btn" class="active">EN 🇬🇧</button>
+            <button onclick="setLanguage('zh')" id="zh-btn">中文 🇨🇳</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="services">
+      <div class="container">
+        <h1 class="en">Our Services</h1>
+        <h1 class="zh">我们的服务</h1>
+        <div class="services-grid">
+          <div class="service-item">
+            <i class="fas fa-mobile-alt"></i>
+            <h2 class="en">Mobile App Development</h2>
+            <h2 class="zh">移动应用开发</h2>
+            <p class="en">Cutting-edge mobile applications for iOS and Android platforms.</p>
+            <p class="zh">为iOS和Android平台开发尖端移动应用。</p>
+          </div>
+          <div class="service-item">
+            <i class="fas fa-code"></i>
+            <h2 class="en">Website Development</h2>
+            <h2 class="zh">网站开发</h2>
+            <p class="en">Custom responsive and dynamic websites tailored to your needs.</p>
+            <p class="zh">根据您的需求定制响应式和动态网站。</p>
+          </div>
+          <div class="service-item">
+            <i class="fas fa-cogs"></i>
+            <h2 class="en">System Development</h2>
+            <h2 class="zh">系统开发</h2>
+            <p class="en">Custom software solutions to streamline your business processes.</p>
+            <p class="zh">定制软件解决方案，以简化您的业务流程。</p>
+          </div>
+          <div class="service-item">
+            <i class="fas fa-brain"></i>
+            <h2 class="en">AI & Machine Learning</h2>
+            <h2 class="zh">人工智能与机器学习</h2>
+            <p class="en">Intelligent systems that learn and adapt to your data.</p>
+            <p class="zh">开发能够学习和适应您数据的智能系统。</p>
+          </div>
+          <div class="service-item">
+            <i class="fas fa-shield-alt"></i>
+            <h2 class="en">Cybersecurity Solutions</h2>
+            <h2 class="zh">网络安全解决方案</h2>
+            <p class="en">Protect your digital assets with our advanced security measures.</p>
+            <p class="zh">使用我们的先进安全措施保护您的数字资产。</p>
+          </div>
+          <div class="service-item">
+            <i class="fas fa-cloud"></i>
+            <h2 class="en">Cloud Services</h2>
+            <h2 class="zh">云服务</h2>
+            <p class="en">Scalable cloud solutions for efficient data management.</p>
+            <p class="zh">可扩展的云解决方案，实现高效的数据管理。</p>
+          </div>
+          <div class="service-item">
+            <i class="fas fa-link"></i>
+            <h2 class="en">Blockchain Development</h2>
+            <h2 class="zh">区块链开发</h2>
+            <p class="en">Build secure, transparent distributed ledger technology applications.</p>
+            <p class="zh">构建安全、透明的分布式账本技术应用。</p>
+          </div>
+          <div class="service-item">
+            <i class="fas fa-network-wired"></i>
+            <h2 class="en">IoT Solutions</h2>
+            <h2 class="zh">物联网（IoT）解决方案</h2>
+            <p class="en">Connect and manage smart devices to optimize your business operations.</p>
+            <p class="zh">连接和管理智能设备，优化您的业务运营。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="en">Contact Us</span>
+        <span class="zh">联系我们</span>
+      </h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h3 class="en">Email</h3>
+              <h3 class="zh">电子邮件</h3>
+              <p>ctkqiang96@zohomail.cn</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h3 class="en">Address</h3><br />
+              <h3 class="zh">地址</h3><br />
+              <p class="en">永丰街道广丰上饶市江西中国</p>
+              <p class="zh">永丰街道广丰上饶市江西中国</p>
+            </div>
+          </div>
+        </div>
+        <div class="social-connect">
+          <h3 class="en">Connect With Us</h3>
+          <h3 class="zh">与我们联系</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/ctkqiang/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook facebook"></i></a>
+            <a href="https://www.instagram.com/manxingenterprise/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram instagram"></i></a>
+            <a href="https://www.linkedin.com/company/%E4%B8%8A%E9%A5%B6%E6%BB%A1%E6%98%9F%E7%A7%91%E6%8A%80/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin linkedin"></i></a>
+            <a href="https://raw.githubusercontent.com/ctkqiang/ctkqiang/refs/heads/main/assets/IMG_9245.JPG" target="_blank" aria-label="微信"><i class="fab fa-weixin weixin"></i></a>
+            <a href="https://www.snapchat.com/add/ctkqiang" target="_blank" aria-label="Snapchat"><i class="fab fa-snapchat snapchat"></i></a>
+            <a href="https://weibo.com/u/7815275485" target="_blank" aria-label="weibo"><i class="fab fa-weibo weibo"></i></a>
+            <a href="https://github.com/ShangRaoManXinKeji" target="_blank" aria-label="github"><i class="fab fa-github github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p class="en">© 2025 Man Xing Enterprise. All rights reserved.</p>
+      <p class="zh">© 2025 上饶满星科技。保留所有权利。</p>
+    </div>
+  </footer>
+
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/services.js"></script>
+</body>
+</html>

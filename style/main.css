@@ -31,10 +31,11 @@ header nav {
 header nav ul {
   display: flex;
   list-style: none;
+
 }
 
 header nav ul li {
-  padding: 0 1rem;
+  padding: 0 0rem;
 }
 
 header nav ul li a {
@@ -154,7 +155,7 @@ footer {
 }
 
 .logo-img {
-  max-width: 20%;
+  max-width: 100px;
   height: auto;
 }
 
