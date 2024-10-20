@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - Man Xing Enterprise | 上饶满星科技</title>
+  <link rel="icon" href="../assets/icon.png" type="image/x-icon">
+  <meta name="author" content="钟智强">
+  <meta name="copyright" content="上饶满星科技">
+  <meta name="description" content="Thank you for contacting Man Xing Enterprise.">
+  <meta name="keywords" content="thank you, Man Xing Enterprise, 上饶满星科技, contact confirmation">
+  <link rel="stylesheet" href="../style/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    .thank-you-content {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .thank-you-icon {
+      font-size: 64px;
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="../index.html">
+            <img src="../assets/banner.png" alt="Man Xing Enterprise Logo" class="logo-img">
+          </a>
+        </div>
+        <div class="hamburger" onclick="toggleNav()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../index.html" class="en">Home</a><a href="../index.html" class="zh">主页</a></li>
+          <li><a href="services.html" class="en">Services</a><a href="services.html" class="zh">服务</a></li>
+          <li><a href="about.html" class="en">About</a><a href="about.html" class="zh">关于我们</a></li>
+          <li><a href="contact.html" class="en">Contact</a><a href="contact.html" class="zh">联系我们</a></li>
+          <li class="language-switcher">
+            <button onclick="setLanguage('en')" id="en-btn" class="active">EN 🇬🇧</button>
+            <button onclick="setLanguage('zh')" id="zh-btn">中文 🇨🇳</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="thank-you-page">
+      <div class="container">
+        <div class="thank-you-content">
+          <i class="fas fa-check-circle thank-you-icon"></i>
+          <h1 class="section-title">
+            <span class="en">Thank You!</span>
+            <span class="zh">谢谢您！</span>
+          </h1>
+          <p class="en">Your message has been successfully sent. We will get back to you soon.</p>
+          <p class="zh">您的消息已成功发送。我们会尽快回复您。</p>
+          <br />
+          <a href="../index.html" class="cta-button en">Return to Home</a>
+          <a href="../index.html" class="cta-button zh">返回主页</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../scripts/main.js"></script>
+</body>
+</html>
