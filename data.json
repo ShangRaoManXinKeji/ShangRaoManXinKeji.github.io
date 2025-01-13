@@ -1,0 +1,161 @@
+{
+  "company": {
+    "name": {
+      "en": "Man Xing Enterprise",
+      "zh": "上饶满星科技"
+    },
+    "founded": "2022",
+    "location": "永丰街道广丰上饶市江西中国",
+    "contact": {
+      "email": "ctkqiang96@zohomail.cn",
+      "social_media": {
+        "facebook": "https://www.facebook.com/ctkqiang/",
+        "instagram": "https://www.instagram.com/manxingenterprise/",
+        "linkedin": "https://www.linkedin.com/company/%E4%B8%8A%E9%A5%B6%E6%BB%A1%E6%98%9F%E7%A7%91%E6%8A%80/",
+        "weixin": "https://raw.githubusercontent.com/ctkqiang/ctkqiang/refs/heads/main/assets/IMG_9245.JPG",
+        "snapchat": "https://www.snapchat.com/add/ctkqiang",
+        "weibo": "https://weibo.com/u/7815275485",
+        "github": "https://github.com/ShangRaoManXinKeji"
+      }
+    }
+  },
+  "services": {
+    "core_services": [
+      {
+        "name": {
+          "en": "Mobile App Development",
+          "zh": "移动应用开发"
+        },
+        "description": {
+          "en": "Cutting-edge mobile applications for iOS and Android platforms",
+          "zh": "为iOS和Android平台开发尖端移动应用"
+        }
+      },
+      {
+        "name": {
+          "en": "Website Development",
+          "zh": "网站开发"
+        },
+        "description": {
+          "en": "Custom responsive and dynamic websites tailored to your needs",
+          "zh": "根据您的需求定制响应式和动态网站"
+        }
+      },
+      {
+        "name": {
+          "en": "System Development",
+          "zh": "系统开发"
+        },
+        "description": {
+          "en": "Custom software solutions to streamline your business processes",
+          "zh": "定制软件解决方案，以简化您的业务流程"
+        }
+      },
+      {
+        "name": {
+          "en": "AI & Machine Learning",
+          "zh": "人工智能与机器学习"
+        },
+        "description": {
+          "en": "Intelligent systems that learn and adapt to your data",
+          "zh": "开发能够学习和适应您数据的智能系统"
+        }
+      },
+      {
+        "name": {
+          "en": "Cybersecurity Solutions",
+          "zh": "网络安全解决方案"
+        },
+        "description": {
+          "en": "Protect your digital assets with our advanced security measures",
+          "zh": "使用我们的先进安全措施保护您的数字资产"
+        }
+      },
+      {
+        "name": {
+          "en": "Cloud Services",
+          "zh": "云服务"
+        },
+        "description": {
+          "en": "Scalable cloud solutions for efficient data management",
+          "zh": "可扩展的云解决方案，实现高效的数据管理"
+        }
+      },
+      {
+        "name": {
+          "en": "Blockchain Development",
+          "zh": "区块链开发"
+        },
+        "description": {
+          "en": "Build secure, transparent distributed ledger technology applications",
+          "zh": "构建安全、透明的分布式账本技术应用"
+        }
+      },
+      {
+        "name": {
+          "en": "IoT Solutions",
+          "zh": "物联网解决方案"
+        },
+        "description": {
+          "en": "Connect and manage smart devices to optimize your business operations",
+          "zh": "连接和管理智能设备，优化您的业务运营"
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "author": "钟智强",
+    "copyright": "上饶满星科技",
+    "description": "上饶满星科技是一家领先的IT解决方案提供商，专注于云计算、人工智能和网络安全领域，为企业提供创新的数字化转型服务",
+    "keywords": [
+      "上饶满星科技",
+      "云计算",
+      "人工智能",
+      "网络安全",
+      "IT解决方案",
+      "数字化转型"
+    ],
+    "analytics": {
+      "google_analytics": "G-XFP6M5GN4H",
+      "hubspot": "47592885"
+    }
+  },
+  "pricing_tiers": {
+    "basic": {
+      "price": {
+        "rm": "4,499/mo",
+        "cny": "6,999/月"
+      },
+      "features": [
+        "1TB Cloud Storage",
+        "Basic AI Analysis",
+        "Standard Firewall",
+        "Email Support"
+      ]
+    },
+    "professional": {
+      "price": {
+        "rm": "13,499/mo",
+        "cny": "19,999/月"
+      },
+      "features": [
+        "20TB Cloud Storage",
+        "Advanced AI Analysis",
+        "Next-Gen Firewall",
+        "24/7 Phone Support",
+        "Custom Integration"
+      ]
+    },
+    "enterprise": {
+      "price": "Custom",
+      "features": [
+        "Unlimited Cloud Storage",
+        "Custom AI Solutions",
+        "Advanced Threat Protection",
+        "24/7 Dedicated Support",
+        "On-Site Consultation",
+        "Full System Integration"
+      ]
+    }
+  }
+}
