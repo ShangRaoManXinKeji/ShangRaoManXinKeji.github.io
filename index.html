@@ -308,11 +308,11 @@
         <a href="#" class="logo" data-i18n="company.name">Man Xing Enterprise</a>
         <div class="nav-controls">
             <select class="lang-select" id="langSelect">
-                <option value="en">English</option>
-                <option value="zh">中文</option>
-                <option value="de">Deutsch</option>
-                <option value="fr">Français</option>
-                <option value="ru">Русский</option>
+                <option value="en">🇬🇧 English</option>
+                <option value="zh">🇨🇳 中文</option>
+                <option value="de">🇩🇪 Deutsch</option>
+                <option value="fr">🇫🇷 Français</option>
+                <option value="ru">🇷🇺 Русский</option>
             </select>
             <button class="theme-toggle" id="themeToggle">🌓</button>
         </div>
@@ -348,10 +348,13 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Man Xing Enterprise (<span data-i18n="company.name.zh">上饶满星科技</span>). All rights reserved.</p>
+        <p>&copy; 2025 Man Xing Enterprise (<span data-i18n="company.name.zh">上饶满星科技</span>). All rights reserved.</p>
     </footer>
 
     <script>
+
+        const prefersDark = window.matchMedia('(prefers-color-scheme: light)');
+
         // Full translations object
        const translations = {
           en: {
@@ -465,7 +468,7 @@
                     "Email Support"
                 ]
             },
-            // ... other pricing tiers
+            
         };
 
         // Theme toggle functionality
@@ -562,40 +565,75 @@
             pricingGrid.innerHTML = '';
 
             const pricingData = {
-                basic: {
-                    name: translations[lang]['pricing.basic'] || "Basic",
-                    price: { rm: "4,499/mo", cny: "6,999/月" },
-                    features: [
-                        "1TB Cloud Storage",
-                        "Basic AI Analysis",
-                        "Standard Firewall",
-                        "Email Support"
-                    ]
-                },
-                professional: {
-                    name: translations[lang]['pricing.professional'] || "Professional",
-                    price: { rm: "13,499/mo", cny: "19,999/月" },
-                    features: [
-                        "20TB Cloud Storage",
-                        "Advanced AI Analysis",
-                        "Next-Gen Firewall",
-                        "24/7 Phone Support",
-                        "Custom Integration"
-                    ]
-                },
-                enterprise: {
-                    name: translations[lang]['pricing.enterprise'] || "Enterprise",
-                    price: "Custom",
-                    features: [
-                        "Unlimited Cloud Storage",
-                        "Custom AI Solutions",
-                        "Advanced Threat Protection",
-                        "24/7 Dedicated Support",
-                        "On-Site Consultation",
-                        "Full System Integration"
-                    ]
-                }
-            };
+              landingPage: {
+                  name: translations[lang]['pricing.landingPage'] || "6-Month Landing Page",
+                  price: { rm: "75/6mo", cny: "99/半年" }, // Cheapest option specifically for landing pages
+                  features: [
+                      "Basic Landing Page Setup",
+                      "Customizable Template",
+                      "Basic SEO",
+                      "Domain Connection"
+                  ]
+              },
+              activism: {
+                  name: translations[lang]['pricing.activism'] || "Activism",
+                  price: { rm: "29/mo", cny: "39/月" }, // Focused on affordability for social change initiatives
+                  features: [
+                      "200GB Cloud Storage",
+                      "Basic AI Insights",
+                      "Standard Firewall",
+                      "Email Support",
+                      "Tools for Campaign Management"
+                  ]
+              },
+              ngo: {
+                  name: translations[lang]['pricing.ngo'] || "NGO",
+                  price: { rm: "49/mo", cny: "69/月" }, // Affordable for non-profit organizations
+                  features: [
+                      "500GB Cloud Storage",
+                      "Basic AI Insights",
+                      "Standard Firewall",
+                      "Email and Chat Support",
+                      "NGO-specific Integration"
+                  ]
+              },
+              basic: {
+                  name: translations[lang]['pricing.basic'] || "Basic",
+                  price: { rm: "99/mo", cny: "129/月" }, // Entry-level plan for individuals or small businesses
+                  features: [
+                      "1GB of data storage",
+                      "Basic AI Analysis",
+                      "Standard Firewall",
+                      "Email Support",
+                      "Landing Page",
+                      "Domain"
+                  ]
+              },
+              professional: {
+                  name: translations[lang]['pricing.professional'] || "Professional",
+                  price: { rm: "1,999/mo", cny: "2,999/月" }, // Advanced tier for mid-sized businesses
+                  features: [
+                      "5TB Cloud Storage",
+                      "Advanced AI Analysis",
+                      "Next-Gen Firewall",
+                      "24/7 Phone Support",
+                      "Custom Integration"
+                  ]
+              },
+              enterprise: {
+                  name: translations[lang]['pricing.enterprise'] || "Enterprise",
+                  price: "Custom",
+                  features: [
+                      "Unlimited Cloud Storage",
+                      "Custom AI Solutions",
+                      "Advanced Threat Protection",
+                      "24/7 Dedicated Support",
+                      "On-Site Consultation",
+                      "Full System Integration"
+                  ]
+              }
+          };
+
 
             Object.entries(pricingData).forEach(([tier, data], index) => {
                 const card = document.createElement('div');
