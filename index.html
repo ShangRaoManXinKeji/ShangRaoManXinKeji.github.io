@@ -24,388 +24,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Styles -->
-    <style>
-        :root {
-            --primary: #2563eb;
-            --secondary: #4f46e5;
-            --accent: #06b6d4;
-            --text-primary: #1f2937;
-            --text-secondary: #4b5563;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f3f4f6;
-            --transition: all 0.3s ease;
-        }
-
-        [data-theme="dark"] {
-            --primary: #3b82f6;
-            --secondary: #6366f1;
-            --accent: #0891b2;
-            --text-primary: #f9fafb;
-            --text-secondary: #e5e7eb;
-            --bg-primary: #111827;
-            --bg-secondary: #1f2937;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            transition: var(--transition);
-            overflow-x: hidden;
-        }
-
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1rem 2rem;
-            background-color: var(--bg-primary);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transform: translateY(-100%);
-            animation: slideDown 0.8s forwards 0.5s;
-        }
-
-        @keyframes slideDown {
-            to {
-                transform: translateY(0);
-            }
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: var(--transition);
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .nav-controls {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .theme-toggle, .lang-select {
-            padding: 0.5rem;
-            border: none;
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            border-radius: 0.5rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .theme-toggle:hover, .lang-select:hover {
-            background: var(--primary);
-            color: white;
-            transform: scale(1.1);
-        }
-
-        /* Hero Section */
-        .hero {
-            margin-top: 5rem;
-            padding: 6rem 2rem;
-            text-align: center;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1));
-            pointer-events: none;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 2rem;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s forwards 0.5s;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s forwards 0.7s;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: var(--primary);
-            color: white;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            transition: var(--transition);
-            margin-top: 1rem;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s forwards 0.9s;
-        }
-
-        .btn:hover {
-            background: var(--secondary);
-            transform: translateY(-3px) scale(1.05);
-        }
-
-        /* Services Section */
-        .services {
-            padding: 6rem 2rem;
-            background: var(--bg-secondary);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-            color: var(--primary);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s forwards 0.5s;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            background: var(--bg-primary);
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: var(--transition);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s forwards;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-
-        .service-card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        /* Pricing Section */
-        .pricing {
-            padding: 6rem 2rem;
-            background: var(--bg-primary);
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .pricing-card {
-            background: var(--bg-secondary);
-            padding: 2.5rem 2rem;
-            border-radius: 1rem;
-            text-align: center;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s forwards;
-        }
-
-        .pricing-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-        }
-
-        .pricing-card:hover {
-            transform: scale(1.02);
-        }
-
-        .price {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin: 1rem 0;
-            font-weight: bold;
-        }
-
-        .features-list {
-            list-style: none;
-            margin: 2rem 0;
-            text-align: left;
-        }
-
-        .features-list li {
-            margin: 0.8rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .features-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 6rem 2rem;
-            background: var(--bg-secondary);
-            text-align: center;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 2rem auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-form input, .contact-form textarea {
-            padding: 0.8rem;
-            border: 1px solid var(--bg-secondary);
-            border-radius: 0.5rem;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            transition: var(--transition);
-        }
-
-        .contact-form input:focus, .contact-form textarea:focus {
-            border-color: var(--primary);
-            transform: scale(1.02);
-        }
-
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .social-link {
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            color: var(--primary);
-            transform: translateY(-3px) scale(1.1);
-        }
-
-        /* Footer */
-        footer {
-            padding: 2rem;
-            background: var(--bg-primary);
-            text-align: center;
-            border-top: 1px solid var(--bg-secondary);
-        }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px 15px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-        }
-
-        .back-to-top:hover {
-            transform: scale(1.1);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideDown {
-            to {
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .services-grid, .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./style/main.css">
 </head>
 <body>
     <!-- Navbar -->
@@ -419,6 +38,11 @@
                     <option value="de">🇩🇪 Deutsch</option>
                     <option value="fr">🇫🇷 Français</option>
                     <option value="ru">🇷🇺 Русский</option>
+                    <option value="ms">🇲🇾 Malay</option>
+                    <option value="ko">🇰🇷 한국어</option>
+                    <option value="ja">🇯🇵 日本語</option>
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="nl">🇳🇱 Nederlands</option>
                 </select>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌓</button>
             </div>
@@ -444,6 +68,142 @@
         <div class="pricing-grid" id="pricingGrid"></div>
     </section>
 
+    <!-- Reviews Section copy paste from CSV -->
+    <!-- TODO add read directly from db , do setup! -->
+    <section class="reviews" id="reviews">
+        <div class="reviews-header">
+            <h2 class="section-title" data-i18n="reviews.title">Customer Reviews</h2>
+            <div class="rating-summary">
+                <div class="rating-stars">★★★★★</div>
+                <div class="rating-score">4.7 out of 5</div>
+                <div class="rating-count">Based on 11 reviews</div>
+            </div>
+        </div>
+        
+        <div class="reviews-grid">
+        <div class="review-card">
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <div class="reviewer-name">Tan Wei Ming</div>
+                    <div class="reviewer-location">🇸🇬 Singapore</div>
+                </div>
+                <div class="review-rating">★★★★★ 4.9</div>
+            </div>
+            <p class="review-text">Exceptional cloud computing solutions that transformed our business operations. The OpenCV computer vision integration for attendance was seamless, and the support team is incredibly responsive.</p>
+            <div class="review-date">Posted on January 15, 2025</div>
+        </div>
+
+        <div class="review-card">
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <div class="reviewer-name">Sarah Lim</div>
+                    <div class="reviewer-location">🇸🇬 Singapore</div>
+                </div>
+                <div class="review-rating">★★★★☆ 4.5</div>
+            </div>
+            <p class="review-text">Man Xing's security app, particularly their VirusTotal-like service, gave us peace of mind. Their team's expertise in detecting and mitigating threats is unmatched in the industry. However, I think the UI could be more intuitive.</p>
+            <div class="review-date">Posted on December 20, 2024</div>
+        </div>
+
+        <div class="review-card">
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <div class="reviewer-name">李明华</div>
+                    <div class="reviewer-location">🇨🇳 China</div>
+                </div>
+                <div class="review-rating">★★★★★ 5.0</div>
+            </div>
+            <p class="review-text">满星科技提供的解决方案非常专业，他们的团队反应迅速，服务一流。特别是在开放CV计算机视觉的出勤应用方面，做得非常好！强烈推荐！</p>
+            <div class="review-date">Posted on November 30, 2024</div>
+        </div>
+
+        <div class="review-card">
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <div class="reviewer-name">Michael Ng</div>
+                    <div class="reviewer-location">🇸🇬 Singapore</div>
+                </div>
+                <div class="review-rating">★★★★☆ 4.2</div>
+            </div>
+            <p class="review-text">Great experience with their website and mobile app development services. The process was smooth and well-managed. However, I think they could have improved the initial consultation phase to better understand our specific needs. Would recommend nonetheless.</p>
+            <div class="review-date">Posted on November 10, 2024</div>
+        </div>
+
+        <div class="review-card">
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <div class="reviewer-name">Klaus Schmidt</div>
+                    <div class="reviewer-location">🇩🇪 Germany</div>
+                </div>
+                <div class="review-rating">★★★★★ 5.0</div>
+            </div>
+            <p class="review-text">I am truly impressed by the outstanding delivery of our mobile app. The team not only developed an intuitive, user-friendly app for our shop, but also flawlessly deployed it to both the Google Play Store and iOS App Store. The transformation was immediate, and the app exceeded our expectations. Their communication was clear, responsive, and efficient throughout the entire process. This has greatly improved our customer engagement and boosted our sales. We are extremely grateful for their excellent work!</p>
+            <div class="review-date">Posted on October 25, 2024</div>
+        </div>
+
+        <div class="review-card">
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <div class="reviewer-name">张伟</div>
+                    <div class="reviewer-location">🇨🇳 China</div>
+                </div>
+                <div class="review-rating">★★★★☆ 4.3</div>
+            </div>
+            <p class="review-text">专业的技术团队，帮助我们提升了整体效率。期待继续合作，特别是在开发我们的网站和移动应用方面！</p>
+            <div class="review-date">Posted on October 5, 2024</div>
+        </div>
+
+        <div class="review-card">
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <div class="reviewer-name">Darren Tan</div>
+                    <div class="reviewer-location">🇸🇬 Singapore</div>
+                </div>
+                <div class="review-rating">★★★★★ 5.0</div>
+            </div>
+            <p class="review-text">Cheng helped develop the RFID Arduino project for my university FYP, and it was indeed excellent! The system worked flawlessly, and the pricing was very reasonable. Highly recommended!</p>
+            <div class="review-date">Posted on September 30, 2024</div>
+        </div>
+
+        <div class="review-card">
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <div class="reviewer-name">Jean-Pierre Dubois</div>
+                    <div class="reviewer-location">🇫🇷 France</div>
+                </div>
+                <div class="review-rating">★★★★☆ 4.7</div>
+            </div>
+            <p class="review-text">Excellente expertise en sécurité des applications. L'équipe est très professionnelle et réactive. I am very happy with their work, but sometimes the communication could be more clear. It would be helpful to have more frequent updates on progress.</p>
+            <div class="review-date">Posted on September 25, 2024</div>
+        </div>
+
+        <div class="review-card">
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <div class="reviewer-name">Willem van der Berg</div>
+                    <div class="reviewer-location">🇳🇱 Netherlands</div>
+                </div>
+                <div class="review-rating">★★★★☆ 4.5</div>
+            </div>
+            <p class="review-text">Very impressed with their website and mobile app development services. Their international support capabilities are top-notch. A reliable technology partner. However, I would have liked better integration with some third-party services.</p>
+            <div class="review-date">Posted on August 15, 2024</div>
+        </div>
+
+        <div class="review-card">
+            <div class="review-header">
+                <div class="reviewer-info">
+                    <div class="reviewer-name">Nur Amirul</div>
+                    <div class="reviewer-location">🇲🇾 Malaysia</div>
+                </div>
+                <div class="review-rating">★★★★★ 5.0</div>
+            </div>
+            <p class="review-text">I am very impressed with the server application built for my web app. The deployment to Vercel was seamless, and the system works perfectly for my business. Highly reliable and fast support throughout the process. Definitely a great experience!</p>
+            <div class="review-date">Posted on July 10, 2024</div>
+        </div>
+    </div>
+
+    </section>
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2 class="section-title" data-i18n="contact.title">联系我们</h2>
@@ -465,372 +225,8 @@
     <!-- Back to Top Button -->
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
 
-    <script>
-
-        const prefersDark = window.matchMedia('(prefers-color-scheme: light)');
-
-        // Full translations object
-       const translations = {
-          en: {
-              "company.name": "Man Xing Enterprise",
-              "company.name.zh": "上饶满星科技",
-              "hero.title": "Innovation Through Technology",
-              "hero.subtitle": "Empowering businesses with cutting-edge solutions in AI, cloud computing, and cybersecurity.",
-              "hero.cta": "Get Started",
-              "services.title": "Our Services",
-              "pricing.title": "Pricing Plans",
-              "contact.title": "Contact Us",
-              "contact.location": "Yongfeng Street, Guangfeng, Shangrao City, Jiangxi, China",
-              "pricing.basic": "Basic",
-              "pricing.professional": "Professional",
-              "pricing.enterprise": "Enterprise",
-              "pricing.custom": "Contact for Price",
-              "pricing.month": "/month"
-          },
-          zh: {
-              "company.name": "上饶满星科技",
-              "company.name.zh": "上饶满星科技",
-              "hero.title": "科技创新",
-              "hero.subtitle": "通过人工智能、云计算和网络安全赋能企业",
-              "hero.cta": "立即开始",
-              "services.title": "我们的服务",
-              "pricing.title": "价格方案",
-              "contact.title": "联系我们",
-              "contact.location": "永丰街道广丰上饶市江西中国",
-              "pricing.basic": "基础版",
-              "pricing.professional": "专业版",
-              "pricing.enterprise": "企业版",
-              "pricing.custom": "联系获取价格",
-              "pricing.month": "/月"
-          },
-          de: {
-              "company.name": "Man Xing Enterprise",
-              "company.name.zh": "上饶满星科技",
-              "hero.title": "Innovation durch Technologie",
-              "hero.subtitle": "Unternehmen mit modernsten Lösungen in den Bereichen KI, Cloud Computing und Cybersicherheit stärken.",
-              "hero.cta": "Jetzt Starten",
-              "services.title": "Unsere Dienstleistungen",
-              "pricing.title": "Preispläne",
-              "contact.title": "Kontakt",
-              "contact.location": "Yongfeng Straße, Guangfeng, Shangrao Stadt, Jiangxi, China",
-              "pricing.basic": "Basis",
-              "pricing.professional": "Professional",
-              "pricing.enterprise": "Enterprise",
-              "pricing.custom": "Preis auf Anfrage",
-              "pricing.month": "/Monat"
-          },
-          fr: {
-              "company.name": "Man Xing Enterprise",
-              "company.name.zh": "上饶满星科技",
-              "hero.title": "L'Innovation par la Technologie",
-              "hero.subtitle": "Autonomiser les entreprises avec des solutions de pointe en IA, cloud computing et cybersécurité.",
-              "hero.cta": "Commencer",
-              "services.title": "Nos Services",
-              "pricing.title": "Tarification",
-              "contact.title": "Contact",
-              "contact.location": "Rue Yongfeng, Guangfeng, Ville de Shangrao, Jiangxi, Chine",
-              "pricing.basic": "Basique",
-              "pricing.professional": "Professionnel",
-              "pricing.enterprise": "Entreprise",
-              "pricing.custom": "Prix sur Demande",
-              "pricing.month": "/mois"
-          },
-          ru: {
-              "company.name": "Man Xing Enterprise",
-              "company.name.zh": "上饶满星科技",
-              "hero.title": "Инновации через Технологии",
-              "hero.subtitle": "Расширение возможностей бизнеса с помощью передовых решений в области ИИ, облачных вычислений и кибербезопасности.",
-              "hero.cta": "Начать",
-              "services.title": "Наши Услуги",
-              "pricing.title": "Тарифы",
-              "contact.title": "Контакты",
-              "contact.location": "Улица Юнфэн, Гуанфэн, город Шанжао, Цзянси, Китай",
-              "pricing.basic": "Базовый",
-              "pricing.professional": "Профессиональный",
-              "pricing.enterprise": "Корпоративный",
-              "pricing.custom": "Цена по Запросу",
-              "pricing.month": "/месяц"
-          }
-      };
-
-        // Services data from your JSON
-        const services = [
-            {
-                name: {
-                    en: "Mobile App Development",
-                    zh: "移动应用开发"
-                },
-                description: {
-                    en: "Cutting-edge mobile applications for iOS and Android platforms",
-                    zh: "为iOS和Android平台开发尖端移动应用"
-                }
-            },
-            // ... other services
-        ];
-
-        // Pricing data from your JSON
-        const pricing = {
-            basic: {
-                price: {
-                    rm: "4,499/mo",
-                    cny: "6,999/月"
-                },
-                features: [
-                    "1TB Cloud Storage",
-                    "Basic AI Analysis",
-                    "Standard Firewall",
-                    "Email Support"
-                ]
-            },
-            
-        };
-
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-
-        themeToggle.addEventListener('click', () => {
-            if (body.getAttribute('data-theme') === 'dark') {
-                body.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
-            } else {
-                body.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-            }
-        });
-
-        // Language switcher
-        const langSelect = document.getElementById('langSelect');
-        
-        langSelect.addEventListener('change', (e) => {
-            setLanguage(e.target.value);
-            localStorage.setItem('lang', e.target.value);
-        });
-
-        function setLanguage(lang) {
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-
-
-            const key = element.getAttribute('data-i18n');
-                element.textContent = translations[lang][key] || translations['en'][key];
-            });
-
-            // Update services and pricing based on language
-            updateServices(lang);
-            updatePricing(lang);
-        }
-
-        function updateServices(lang) {
-            const servicesGrid = document.getElementById('servicesGrid');
-            servicesGrid.innerHTML = '';
-
-            const servicesData = [
-                {
-                    name: { en: "Mobile App Development", zh: "移动应用开发" },
-                    description: { en: "Cutting-edge mobile applications for iOS and Android platforms", zh: "为iOS和Android平台开发尖端移动应用" }
-                },
-                {
-                    name: { en: "Website Development", zh: "网站开发" },
-                    description: { en: "Custom responsive and dynamic websites tailored to your needs", zh: "根据您的需求定制响应式和动态网站" }
-                },
-                {
-                    name: { en: "System Development", zh: "系统开发" },
-                    description: { en: "Custom software solutions to streamline your business processes", zh: "定制软件解决方案，以简化您的业务流程" }
-                },
-                {
-                    name: { en: "AI & Machine Learning", zh: "人工智能与机器学习" },
-                    description: { en: "Intelligent systems that learn and adapt to your data", zh: "开发能够学习和适应您数据的智能系统" }
-                },
-                {
-                    name: { en: "Cybersecurity Solutions", zh: "网络安全解决方案" },
-                    description: { en: "Protect your digital assets with our advanced security measures", zh: "使用我们的先进安全措施保护您的数字资产" }
-                },
-                {
-                    name: { en: "Cloud Services", zh: "云服务" },
-                    description: { en: "Scalable cloud solutions for efficient data management", zh: "可扩展的云解决方案，实现高效的数据管理" }
-                },
-                {
-                    name: { en: "Blockchain Development", zh: "区块链开发" },
-                    description: { en: "Build secure, transparent distributed ledger technology applications", zh: "构建安全、透明的分布式账本技术应用" }
-                },
-                {
-                    name: { en: "IoT Solutions", zh: "物联网解决方案" },
-                    description: { en: "Connect and manage smart devices to optimize your business operations", zh: "连接和管理智能设备，优化您的业务运营" }
-                }
-            ];
-
-            servicesData.forEach((service, index) => {
-                const card = document.createElement('div');
-                card.className = 'service-card';
-                card.style.animation = `fadeInUp 0.8s ${index * 0.1}s forwards`;
-
-                card.innerHTML = `
-                    <h3>${service.name[lang] || service.name.en}</h3>
-                    <p>${service.description[lang] || service.description.en}</p>
-                    <a href="#contact" class="btn">${translations[lang]['hero.cta']}</a>
-                `;
-
-                servicesGrid.appendChild(card);
-            });
-        }
-
-        function updatePricing(lang) {
-            const pricingGrid = document.getElementById('pricingGrid');
-            pricingGrid.innerHTML = '';
-
-            const pricingData = {
-              landingPage: {
-                  name: translations[lang]['pricing.landingPage'] || "6-Month Landing Page",
-                  price: { rm: "75/6mo", cny: "99/半年" }, // Cheapest option specifically for landing pages
-                  features: [
-                      "Basic Landing Page Setup",
-                      "Customizable Template",
-                      "Basic SEO",
-                      "Domain Connection"
-                  ]
-              },
-              activism: {
-                  name: translations[lang]['pricing.activism'] || "Activism",
-                  price: { rm: "29/mo", cny: "39/月" }, // Focused on affordability for social change initiatives
-                  features: [
-                      "200GB Cloud Storage",
-                      "Basic AI Insights",
-                      "Standard Firewall",
-                      "Email Support",
-                      "Tools for Campaign Management"
-                  ]
-              },
-              ngo: {
-                  name: translations[lang]['pricing.ngo'] || "NGO",
-                  price: { rm: "49/mo", cny: "69/月" }, // Affordable for non-profit organizations
-                  features: [
-                      "500GB Cloud Storage",
-                      "Basic AI Insights",
-                      "Standard Firewall",
-                      "Email and Chat Support",
-                      "NGO-specific Integration"
-                  ]
-              },
-              basic: {
-                  name: translations[lang]['pricing.basic'] || "Basic",
-                  price: { rm: "99/mo", cny: "129/月" }, // Entry-level plan for individuals or small businesses
-                  features: [
-                      "1GB of data storage",
-                      "Basic AI Analysis",
-                      "Standard Firewall",
-                      "Email Support",
-                      "Landing Page",
-                      "Domain"
-                  ]
-              },
-              professional: {
-                  name: translations[lang]['pricing.professional'] || "Professional",
-                  price: { rm: "1,999/mo", cny: "2,999/月" }, // Advanced tier for mid-sized businesses
-                  features: [
-                      "5TB Cloud Storage",
-                      "Advanced AI Analysis",
-                      "Next-Gen Firewall",
-                      "24/7 Phone Support",
-                      "Custom Integration"
-                  ]
-              },
-              enterprise: {
-                  name: translations[lang]['pricing.enterprise'] || "Enterprise",
-                  price: "Custom",
-                  features: [
-                      "Unlimited Cloud Storage",
-                      "Custom AI Solutions",
-                      "Advanced Threat Protection",
-                      "24/7 Dedicated Support",
-                      "On-Site Consultation",
-                      "Full System Integration"
-                  ]
-              }
-          };
-
-
-            Object.entries(pricingData).forEach(([tier, data], index) => {
-                const card = document.createElement('div');
-                card.className = 'pricing-card';
-                card.style.animation = `fadeInUp 0.8s ${index * 0.1}s forwards`;
-
-                const price = data.price === "Custom" 
-                    ? translations[lang]['pricing.custom']
-                    : (lang === 'zh' ? data.price.cny : data.price.rm);
-
-                card.innerHTML = `
-                    <h3>${data.name}</h3>
-                    <div class="price">${price}</div>
-                    <ul class="features-list">
-                        ${data.features.map(feature => `<li>${feature}</li>`).join('')}
-                    </ul>
-                    <a href="#contact" class="btn">${translations[lang]['hero.cta']}</a>
-                `;
-
-                pricingGrid.appendChild(card);
-            });
-        }
-
-        // Initialize social media links
-        function initializeSocialLinks() {
-            const socialLinks = document.querySelector('.social-links');
-            const socialData = {
-                facebook: "https://www.facebook.com/ctkqiang/",
-                instagram: "https://www.instagram.com/manxingenterprise/",
-                linkedin: "https://www.linkedin.com/company/%E4%B8%8A%E9%A5%B6%E6%BB%A1%E6%98%9F%E7%A7%91%E6%8A%80/",
-                weixin: "https://raw.githubusercontent.com/ctkqiang/ctkqiang/refs/heads/main/assets/IMG_9245.JPG",
-                snapchat: "https://www.snapchat.com/add/ctkqiang",
-                weibo: "https://weibo.com/u/7815275485",
-                github: "https://github.com/ShangRaoManXinKeji"
-            };
-
-            Object.entries(socialData).forEach(([platform, url]) => {
-                const link = document.createElement('a');
-                link.href = url;
-                link.className = 'social-link';
-                link.target = '_blank';
-                link.rel = 'noopener noreferrer';
-                link.innerHTML = `<i class="fab fa-${platform}"></i>`;
-                socialLinks.appendChild(link);
-            });
-        }
-
-        // Smooth scroll functionality
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Intersection Observer for animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.service-card, .pricing-card').forEach(card => {
-            observer.observe(card);
-        });
-
-        // Initialize
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        const savedLang = localStorage.getItem('lang') || navigator.language.split('-')[0] || 'en';
-
-        if (savedTheme === 'dark') {
-            body.setAttribute('data-theme', 'dark');
-        }
-
-        langSelect.value = savedLang;
-        setLanguage(savedLang);
-        initializeSocialLinks();
-    </script>
+    
+    <script src="./scripts/main.js"></script>
     <!-- Font Awesome for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
